@@ -25,13 +25,7 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     color: activeCardColor,
-                    cardChild: Container(
-                      child: Column(
-                        children: [
-                          Icon(FontAwesomeIcons.)
-                        ],
-                      ),
-                    ),
+                    cardChild: ReusableCardChild(),
                   ),
                 ),
                 Expanded(
@@ -70,6 +64,36 @@ class _InputPageState extends State<InputPage> {
             height: bottomContainerHeight,
             decoration: BoxDecoration(
               color: bottomContainerColor,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class ReusableCardChild extends StatelessWidget {
+  ReusableCardChild({this.icon});
+  final Icon? icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            FontAwesomeIcons.venus,
+            size: 80,
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          Text(
+            'Male',
+            style: TextStyle(
+              fontSize: 18.0,
+              color: Color(0xFF8D8E98),
             ),
           )
         ],
