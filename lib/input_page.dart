@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'reusable_card.dart';
+import 'icob_content.dart';
 
 const bottomContainerColor = Color(0xFFEB1555);
 const activeCardColor = Color(0xFF1D1E33);
@@ -70,52 +72,5 @@ class _InputPageState extends State<InputPage> {
         ],
       ),
     );
-  }
-}
-
-class ReusableCardChild extends StatelessWidget {
-  ReusableCardChild({this.icon, this.lable});
-  final IconData? icon;
-  final String? lable;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            icon,
-            size: 80,
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Text(
-            lable!,
-            style: TextStyle(
-              fontSize: 18.0,
-              color: Color(0xFF8D8E98),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class ReusableCard extends StatelessWidget {
-  ReusableCard({required this.color, this.cardChild});
-  final Color color;
-  final Widget? cardChild;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        margin: EdgeInsets.all(15),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: color,
-        ),
-        child: cardChild);
   }
 }
